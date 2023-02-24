@@ -1,0 +1,149 @@
+@font-face {
+  font-family: 'FS Albert Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../fonts/FSAlbertPro-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'FS Albert Bold Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../fonts/FSAlbertPro-BoldItalic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'FS Albert Extra Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../fonts/FSAlbertPro-ExtraBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'FS Albert Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../fonts/FSAlbertPro-Italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'FS Albert Light';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../fonts/FSAlbertPro-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'FS Albert Light Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../fonts/FSAlbertPro-LightItalic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'FS Albert Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../fonts/FSAlbertPro-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'FS Albert Thin';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../fonts/FSAlbertPro-Thin.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'FS Albert Thin Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../fonts/FSAlbertPro-ThinItalic.ttf') format('truetype');
+}
+
+/* DEFAULTS */
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'FS Albert Regular';
+  letter-spacing: 1px;
+  -webkit-tap-highlight-color:  rgba(255, 255, 255, 0);
+  box-sizing: border-box;
+}
+
+input, textarea {  
+  -webkit-user-select: text;
+  user-select: text;
+  -webkit-user-callout: default;
+  -webkit-touch-callout: default;
+}
+
+body {
+  display: block;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  empty-cells: show;
+  width: 100%;
+}
+
+td, textarea, img, div {
+  vertical-align: top;
+}
+
+th {
+  text-align: left;
+}
+
+:active, :focus {
+  -webkit-outline: 0;
+  -ms-outline: 0;
+  outline: 0;
+}
+
+div, a, li {
+  position: relative;
+}
+
+a {
+  color: #00ADD8;
+  text-decoration: none;
+}
+
+ul, ol {
+  padding-left: 25px;
+}
+
+ul.list-none {
+  list-style: none;
+}
+
+ul.list-circle {
+  list-style-type: circle;
+}
+
+ul.list-square {
+  list-style-type: square;
+}
+
+ul.list-upper-roman {
+  list-style-type: upper-roman;
+}
+
+ul.list-lower-alpha {
+  list-style-type: lower-alpha;
+}
+
+input[type="radio"], input[type="checkbox"], input[type="submit"], button, select {
+  cursor: pointer;
+}
+
+input[type=search]::-ms-clear {  display: none; width : 0; height: 0; }
+input[type=search]::-ms-reveal {  display: none; width : 0; height: 0; }
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }

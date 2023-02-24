@@ -1,0 +1,21 @@
+.button-container {
+
+}
+
+    .button-container > button {
+        box-shadow: 0px 3px 15px -9px #ED1B2E;
+        background-color: #ED1B2E;
+        border-radius: 15px;
+        text-align: center;
+        display:flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        cursor:pointer;
+        color:#ffffff;
+        font: normal 14px 'FS Albert Extra Bold';
+        height: 60px;
+        padding: auto;
+        /* padding: 20px 30px; */
+        text-decoration:none;
+    }
