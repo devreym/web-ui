@@ -14,8 +14,6 @@ import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { StaticDatePicker } from '@mui/x-date-pickers/StaticDatePicker';
 import TextField from '@mui/material/TextField';
-import { margin } from '@mui/system';
-import Loading from '../Loading';
 
 export default ({}) => {
 const [submitLoading, setSubmitLoading] = useState(false);
@@ -396,9 +394,7 @@ const submitBooking = (e) => {
 
 return (
     <div id='booking-container'>
-    {(f.isMobile) ? 
-        <>
-        <div className='step-container'>
+    <div className='step-container'>
         <Step.Group attached='top' widths={4} style={{ textAlign: 'left' }}>
             <Step  active={currentStep == 1 ? true : false } onClick={()=> {setCurrentStep(1); resetSchedule()}} >
             <Icon name='camera'/>
@@ -558,9 +554,5 @@ return (
             </div></>
             }
         </Segment>
-    
-    </>
-    : <Loader/>}
-</div>
-
+    </div>
 )}
