@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ type: 'application/json' }));
 app.use(bodyParser.text({ type: 'text/plain' }));
 app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "https://rm-webapp.df.r.appspot.com");
+  res.header("Access-Control-Allow-Origin", "https://booking-system-demo-379009.df.r.appspot.com");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });

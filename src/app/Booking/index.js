@@ -15,6 +15,8 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { StaticDatePicker } from '@mui/x-date-pickers/StaticDatePicker';
 import TextField from '@mui/material/TextField';
 import { margin } from '@mui/system';
+import {BrowserView, MobileView} from 'react-device-detect';
+import Loading from '../Loading';
 
 export default ({}) => {
 const [submitLoading, setSubmitLoading] = useState(false);
@@ -394,6 +396,8 @@ const submitBooking = (e) => {
 }
 
 return (
+    <>
+    <BrowserView>
     <div id='booking-container'>
     <div className='step-container'>
         <Step.Group attached='top' widths={4} style={{ textAlign: 'left' }}>
@@ -558,4 +562,9 @@ return (
         </Segment>
 
     </div>
+    </BrowserView>
+    <MobileView>
+        <Loading/>
+    </MobileView>
+    </>
 )}
