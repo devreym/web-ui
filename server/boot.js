@@ -1,27 +1,26 @@
-const { port, production } = require('./configs/configs');
+const bodyParser = require('body-parser');
+const express = require('express')
+const app = express();
+const config = require('./configs/configs');
 const path = require('path');
-const fastify = require('fastify')({ logger: true, bodyLimit: 52428800 });
+app.use(express.static(path.join(__dirname,"../build")));
 require('./services/services')();
 
-if(production) {
-  fastify.register(require('fastify-static'), {
-    root: path.resolve(__dirname, '../build/')
-  });
 
-  fastify.register((instance, options, done) => {
-    instance.setNotFoundHandler((req, res) => {
-      res.sendFile('index.html', path.resolve(__dirname, '../build/'));
-    });
-    done();
-  }, { prefix: '/' });
-}
-
-require('./routes/main.routes')(fastify);
-
-fastify.listen(port, '0.0.0.0', (err, address) => {
-    if (err) {
-      fastify.log.error(err);
-      process.exit(1);
-    }
-    
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json({ type: 'application/json' }));
+app.use(bodyParser.text({ type: 'text/plain' }));
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "https://rm-webapp.df.r.appspot.com");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
 });
+
+app.use(express.static('dist'));
+
+config.addRoutes(app);
+app.get('/*', function(req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
+app.listen(config.port|| 8080, () => console.log(`Listening on port ${process.env.PORT || 8080}!`));
