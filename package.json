@@ -32,7 +32,7 @@
   },
   "scripts": {
     "start": "concurrently \"npm run start:server\" \"npm run start:client\"",
-    "start:server": "nodemon server/boot.js",
+    "start:server": "node server/boot.js",
     "start:client": "react-scripts start",
     "build": "cross-env GENERATE_SOURCEMAP=false react-scripts build",
     "test": "react-scripts test",
