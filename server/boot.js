@@ -18,7 +18,7 @@ if(production) {
 
 require('./routes/main.routes')(fastify);
 
-fastify.listen(port, '127.0.0.1', (err, address) => {
+fastify.listen(port, '::', (err, address) => {
     if (err) {
       fastify.log.error(err);
       process.exit(1);
