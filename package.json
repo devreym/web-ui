@@ -30,8 +30,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start2": "node server/boot.js",
-    "start": "concurrently \"npm run start:server\" \"npm run start:client\"",
+    "start": "node server/boot.js",
+    "start2": "concurrently \"npm run start:server\" \"npm run start:client\"",
     "start:server": "node server/boot.js",
     "start:client": "react-scripts start",
     "build": "cross-env GENERATE_SOURCEMAP=false react-scripts build",

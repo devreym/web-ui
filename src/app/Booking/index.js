@@ -396,7 +396,9 @@ const submitBooking = (e) => {
 
 return (
     <div id='booking-container'>
-    <div className='step-container'>
+    {(f.isMobile) ? 
+        <>
+        <div className='step-container'>
         <Step.Group attached='top' widths={4} style={{ textAlign: 'left' }}>
             <Step  active={currentStep == 1 ? true : false } onClick={()=> {setCurrentStep(1); resetSchedule()}} >
             <Icon name='camera'/>
@@ -441,7 +443,6 @@ return (
 
 
     </div>  
-    
         <Segment basic>
             {currentStep === 1 && <StepSession />}
             {currentStep === 2 && <StepPackage />}
@@ -557,6 +558,9 @@ return (
             </div></>
             }
         </Segment>
+    
+    </>
+    : <Loader/>}
+</div>
 
-    </div>
 )}
