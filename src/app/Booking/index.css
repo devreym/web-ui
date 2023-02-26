@@ -1,0 +1,14 @@
+#booking-container {
+    width: 100%;
+    height: 99vh;
+    padding: 50px;
+  
+}
+
+    #booking-container > .step-container{
+  
+    }
+
+.ui.step .content {
+    text-align: left !important;
+}

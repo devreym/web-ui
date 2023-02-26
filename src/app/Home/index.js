@@ -25,9 +25,8 @@ export default ({
 
 
     useEffect(() => {
-        getFreeSlots() 
-      
-    }, [events][date]);
+        
+    }, [date]);
 
     const getEvents = (d) => {
         f.fetch({
@@ -36,7 +35,6 @@ export default ({
             success: p => {
                 if(p.success) {
                     setEvents(p.result)
-                    getFreeSlots() 
                 } else {
                     
                 }

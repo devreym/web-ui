@@ -7,4 +7,10 @@ module.exports = app => {
             res.send(cb ? successModel : failModel);
         });
     });
+    app.post('/api/calendar/event/create', (req, res) => {
+        console.log('Routes');
+        controller.createEvent(req.body, cb => {
+            res.send(cb ? successModel : failModel);
+        });
+    });
 };
