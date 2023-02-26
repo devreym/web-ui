@@ -249,7 +249,7 @@ const packages = (p) => {
 const getEvents = (d) => {
     setTimeSlotLoading(true);
     f.fetch({
-        api: '/api/calendar/event/get',
+        api: '/ui/api/calendar/event/get',
         payload: { date: d.format('YYYY-MM-DD')},
         success: p => {
             if(p.success) {
@@ -260,7 +260,7 @@ const getEvents = (d) => {
                 }
                
             } else {
-                
+                console.log('Something Went Wrong '+ p)
             }
         }
     });
@@ -366,7 +366,7 @@ const submitBooking = (e) => {
     }
 
     f.fetch({
-        api: '/api/calendar/event/create',
+        api: '/ui/api/calendar/event/create',
         payload: payload,
         success: p => {
             if(p.success) {
@@ -385,6 +385,7 @@ const submitBooking = (e) => {
                     success: false,
                     message: 'Something went wrong'
                 })
+                console.log('Something Went Wrong '+ p)
                 
             }
         }
